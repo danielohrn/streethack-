@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+#map {
+    width: 100vw;
+    height: 90vh;
+}
+
+#menu-bar {
+    height: 10vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    position: absolute;
+    box-shadow: 0 0 10px #333;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#compass {
+    cursor: pointer;
+}
+  
+#menu-bar #logo {
+    color: red;
+    font-size: 3em;
+    font-weight: bold;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    top: 0;
+    background-color: black;
+    height: 1.5em; 
+}
+  
+.menu-item {
+    padding: .5em;
+    margin: .5em;
+    color: #fff;
+    display: inline-block;
+    font-size: .8em; /* Button size */
+}
+  
+  /* Icon */
+  .menu-item a > span::before {
+      font-size: 3em;
+      margin: 0;
+  }
+  
+  #menu a:hover > span::before {
+      text-shadow: 0 0 5px red;
+      transition: .4s
+  }
+  
+  /* Icon */
+  #menu-list ul li a > span::before {
+      font-size: 1.5em;
+      margin: 0;
+  }
+  #menu-list ul li a:hover {
+      text-shadow: 0 0 5px red;
+      transition: .4s
+  }
+  
+  #menu-site {
+      position: absolute;
+      top: -90vh;
+      left: 0;
+      right: 0;
+      height: 90vh;
+      background: #fff;
+      transition: .5s;
+      opacity: 0;
+      visibility: hidden;
+  }
+  
+  
+  #quest-dialog {
+      position: absolute;
+      top: -4em;
+      left: 0;
+      right: 0;
+      display: block;
+      z-index: 1;
+      opacity: 0;
+      transition: .5s;
+      visibility: hidden;
+      background: #000;
+      color: #fff;
+      padding: 1em;
+      border-top: 1px solid #111
+  }
+  
+  #quest-dialog #quest-dialog-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  #quest-dialog #quest-dialog-progress progress {
+      width: 100%
+  }
+  
+      progress[value] {
+          /* Reset the default appearance */
+          -webkit-appearance: none;
+          appearance: none;
+          height: 20px;
+      }
+      progress[value]::-webkit-progress-bar { background-color: #fff }
+       progress[value]#quest-dialog-cooldown::-webkit-progress-value {background: #005a96}
+       progress[value]#quest-dialog-taking::-webkit-progress-value {background: #77b300}
+  
+  #quest-dialog #quest-dialog-loot {
+      display: flex;
+      justify-content: space-around;
+      margin: .5em 0
+  }
+  #quest-dialog #quest-dialog-buttons {
+      display: flex;
+      justify-content: space-between
+  }
+  #quest-dialog #quest-dialog-buttons button {
+      width: 48%;
+  }
+  
+  #menu-list a {
+      padding: 1em;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+  }
+  
+  .menu-item {
+      padding: .5em;
+      margin: .5em;
+      color: #fff;
+      display: inline-block;
+      font-size: .8em; /* Button size */
+  }
+  
+  /* Icon */
+  .menu-item a > span::before {
+      font-size: 3em;
+      margin: 0;
+  }
+  
+  #menu a:hover > span::before {
+      text-shadow: 0 0 5px red;
+      transition: .4s
+  }
+  
+  /* Icon */
+  #menu-list ul li a > span::before {
+      font-size: 1.5em;
+      margin: 0;
+  }
+  #menu-list ul li a:hover {
+      text-shadow: 0 0 5px red;
+      transition: .4s
+  }
+  
+  #menu-list {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: -50vh;
+      height: 70vh;
+      background: rgb(22, 22, 22);
+      color: rgb(123, 255, 0);
+      overflow-y: scroll;
+      transition: .4s;
+      box-shadow: 0 0 10px #333;
+      opacity: 0;
+      visibility: hidden;
+      
+  }
+  
+  #menu-site {
+      position: absolute;
+      top: -90vh;
+      left: 0;
+      right: 0;
+      height: 90vh;
+      background: #fff;
+      transition: .5s;
+      opacity: 0;
+      visibility: hidden;
+  }
+  
+  
+  #quest-dialog.show,
+  #menu-site.show,
+  #menu-list.show {
+      top: 4.5em;
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  i.red {
+      color: #b30000
+  }
+  i.green {
+      color: #77b300
+  }
+  
+  #menu-list a {
+      padding: 1em;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      display: flex; 
+      align-items: center; 
+  }
+  
+  #menu-list li:nth-child(odd) {
+      background: rgb(29, 44, 77);
+  }
+  
+  #menu-list ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+  }
+  
+  .menu-buttons{
+      color: white;
+  }
+  
+  .menu-title {
+      margin-left: 20px;
+      font-size: 20px;
+  }
+  
+  .menu-container ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .menu-container ul li .center-map{
+      margin: 0 20px 0 0; 
+  }
+  
+  .error-message {
+      padding: 50px 10px;
+      text-align: center; 
+      line-height: 30px; 
+      width: 100vw; 
+      height: 30vh;
+      
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column; 
+  }
+  
